@@ -3,8 +3,8 @@ import random
 import requests
 from playwright.sync_api import sync_playwright
 
-TELEGRAM_TOKEN = "8900548662:AAFGzGp22FdxK2Y6TIobJcac3P7V2SNV3FU" # paste your telegram tocken
-CHAT_ID = "7200041211" # paste your chat id from telegram
+TELEGRAM_TOKEN = "" # paste your telegram tocken
+CHAT_ID = "" # paste your chat id from telegram
 
 PRODUCTS = { # here you can paste url to particular clothes and the size of them you're looking for
     # example:
@@ -18,7 +18,7 @@ def send_telegram_msg(message: str):
     try:
         requests.post(url, data=payload)
     except Exception as e:
-        print(f"❌ Błąd Telegram: {e}")
+        print(f"❌ Error Telegram: {e}")
 
 with sync_playwright() as p:
     browser = p.chromium.launch(headless=False)
